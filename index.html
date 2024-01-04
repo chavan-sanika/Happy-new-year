@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy New Year</title>
+  <style>
+    body {
+      background-color: black;
+      font-family: cursive;
+    }
+       section{
+        height: 90vh;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 20px;
+       }
+       div{
+        height: 500px;
+        width: 200px;
+        
+        font-size:5em;
+        font-weight: bold;
+        text-align: center;
+       }
+       
+       .glow {
+        font-size: 80px;
+        color: #fff;
+        text-align: center;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+      
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+        }
+        
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+        }
+      }
+#initialElement{
+  text-decoration: underline;
+}
+#replacementElement{
+  text-decoration: underline;
+}
+     
+  </style>
+
+  
+</head>
+<body>
+  <section>
+
+    
+    <div>
+      <h1 class="glow">2</h1>
+    </div>
+    <div>
+      <h1 class="glow">0</h1>
+     </div>
+     <div>
+      <h1 class="glow">2</h1>
+     </div>
+     <div id="initialElement">
+      <h1 class="glow">3</h1>
+     </div>
+     <div id="replacementElement" style="display: none;">
+      <h1 class="glow">4</h1>
+      <img src="https://www.gifcen.com/wp-content/uploads/2023/06/fireworks-gif-5.gif" >
+     </div>
+     <marquee class="glow" behaviour="slide" direction="right" loop="5" scrollamount="15"><b>Happy New Year</b></marquee>
+    
+    </section>
+
+
+    <script>
+    
+      // Function to replace the initial element with the replacement element after 5 seconds
+function replaceElements() {
+  setTimeout(function() {
+    const initialElement = document.getElementById('initialElement');
+    const replacementElement = document.getElementById('replacementElement');
+
+    // Hide the initial element
+    initialElement.style.display ='none';
+
+    // Show the replacement element
+    replacementElement.style.display = 'block'; // or 'inline' or 'whatever fits your layout'
+
+    // If you want to remove the initial element instead of hiding it
+    // initialElement.parentNode.removeChild(initialElement);
+  }, 5000); // 5000 milliseconds = 5 seconds
+} 
+
+// Call the function to trigger the replacement after 5 seconds
+replaceElements();
+
+  </script>
+</body>
+
+</html>
